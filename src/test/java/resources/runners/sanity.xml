@@ -13,7 +13,7 @@
     </listeners>
     <test name="test" >
         <classes>
-            <class name="gov.uk.check.visa.testsuite.JobSearchTest"></class>
+            <class name="gov.uk.check.visa.testsuite.VisaConfirmationTest"></class>
 
         </classes>
     </test>

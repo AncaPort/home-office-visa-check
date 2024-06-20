@@ -1,4 +1,9 @@
 package gov.uk.check.visa.pages;
 
-public class ResultPage {
+import gov.uk.check.visa.utility.Utility;
+
+public class ResultPage extends Utility {
+    /**
+     * 4.ResultPage - resultMessage locator and create methods 'String getResultMessage()' and 'void confirmResultMessage(String expectedMessage)' (Note Use Assert.assertTrue)
+     */
 }

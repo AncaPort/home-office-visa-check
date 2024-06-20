@@ -9,23 +9,30 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
 
 /**
- * 2.ResultPage
- * Locators - resultText
- * Method - verifyTheResults(String expected)
+ * 3.SelectNationalityPage -nationalityDropDownList, nextStepButton locators and create methods  'void selectNationality(String nationality)'
+ * and 'void clickNextStepButton()'
  */
-
 public class SelectNationalityPage extends Utility {
 
     @CacheLookup
-    @FindBy(css = ".search-header__title")
-    WebElement resultText;
+    @FindBy(xpath = "//select[@id='response']")
+    WebElement nationalityDropDownList;
 
-
-    public void verifyTheResults(String expected) {
-
-
-        CustomListeners.test.log(Status.PASS, "verify result text" + resultText);
-        Reporter.log("verify result text" + resultText);
-
+    public void selectNationality(String nationality) {
+        clickOnElement(nationalityDropDownList);
+        selectByVisibleTextFromDropDown(nationalityDropDownList, nationality);
+        CustomListeners.test.log(Status.PASS, "Select nationality" + nationalityDropDownList);
+        Reporter.log("select nationality" + nationalityDropDownList);
     }
+
+    @CacheLookup
+    @FindBy(xpath = "//button[contains(text(),'Continue')]")
+    WebElement nextStepButton;
+
+    public void clickNextStepButton() {
+        clickOnElement(nextStepButton);
+        Reporter.log("click on continue" + nextStepButton.toString());
+        CustomListeners.test.log(Status.PASS, "click on continue" + nextStepButton);
+    }
+
 }
